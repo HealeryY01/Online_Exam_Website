@@ -1,0 +1,28 @@
+@import url("https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.nth-topmenu-expanded {
+  @apply absolute top-10 z-50 w-full text-center bg-white animate-slideDown;
+}
+.nth-icon {
+  @apply w-5 h-5 inline-block;
+}
+.nth-subheadline {
+  @apply flex justify-center items-center mb-24;
+}
+.nth-subheadline-deco-line {
+  @apply w-8 h-px bg-gray-300;
+}
+.nth-subheadline-deco-label {
+  @apply uppercase mx-4 tracking-widest text-gray-500 font-medium text-sm text-center;
+}
+
+.nth-button {
+  @apply text-center uppercase tracking-wider py-4 px-8 text-xs font-semibold cursor-pointer hover:bg-opacity-90;
+}
+.nth-link {
+  @apply hover:text-coffee-400;
+}

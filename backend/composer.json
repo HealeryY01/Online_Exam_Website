@@ -1,0 +1,17 @@
+{
+    "name": "haiye/backend",
+    "autoload": {
+        "psr-4": {
+            "Haiye\\Backend\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Healer",
+            "email": "nguyenthehieua2001@gmail.com"
+        }
+    ],
+    "require": {
+        "firebase/php-jwt": "^6.10"
+    }
+}
