@@ -1,6 +1,6 @@
 <?php
 require_once '../../config/cors.php';
-setCorsHeaders();
+
 
 require_once '../../config/database.php';
 
