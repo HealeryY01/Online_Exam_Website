@@ -6,18 +6,18 @@
 </template>
 
 <script>
-import Login from './Login.vue'
-import Registration from './Registration.vue'
+import Login from "./Login.vue";
+import Registration from "./Registration.vue";
 
 export default {
   components: {
     Login,
-    Registration
+    Registration,
   },
   data() {
     return {
-      showRegister: false
-    }
+      showRegister: false,
+    };
   },
   methods: {
     handleToggleRegister() {
@@ -25,7 +25,7 @@ export default {
     },
     handleCloseRegister() {
       this.showRegister = false;
-    }
-  }
-}
+    },
+  },
+};
 </script>

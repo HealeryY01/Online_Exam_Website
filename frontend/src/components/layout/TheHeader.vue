@@ -5,7 +5,11 @@
         <!-- Logo -->
         <div class="flex items-center">
           <router-link to="/" class="flex items-center space-x-3">
-            <img src="@/assets/images/favicon/icon-1.ico" alt="Logo" class="h-10 w-auto" />
+            <img
+              src="@/assets/images/favicon/icon-2.webp"
+              alt="Logo"
+              class="h-10 w-auto"
+            />
             <span class="text-2xl font-bold text-gray-900">OnlineTest</span>
           </router-link>
         </div>
@@ -98,72 +102,72 @@
 export default {
   data() {
     return {
-      userRole: '',
+      userRole: "",
       menuVisible: false,
       isDesktop: window.innerWidth >= 1024,
-      userEmail: ''
-    }
+      userEmail: "",
+    };
   },
   computed: {
     isLoggedIn() {
-      const user = JSON.parse(localStorage.getItem('user') || '{}');
+      const user = JSON.parse(localStorage.getItem("user") || "{}");
       return user.role && localStorage.getItem("isLoggedIn") === "true";
     },
     userfull_name() {
-      const user = JSON.parse(localStorage.getItem('user') || '{}');
-      return user.full_name || '';
-    }
+      const user = JSON.parse(localStorage.getItem("user") || "{}");
+      return user.full_name || "";
+    },
   },
   created() {
-    const user = JSON.parse(localStorage.getItem('user') || '{}');
-    this.userRole = user.role || '';
-    this.userEmail = user.email || '';
-    
-    window.addEventListener('storage', this.handleStorageChange);
+    const user = JSON.parse(localStorage.getItem("user") || "{}");
+    this.userRole = user.role || "";
+    this.userEmail = user.email || "";
+
+    window.addEventListener("storage", this.handleStorageChange);
   },
   methods: {
     handleStorageChange(e) {
-      if (e.key === 'user') {
-        const user = JSON.parse(e.newValue || '{}');
-        this.userRole = user.role || '';
-        this.userEmail = user.email || '';
+      if (e.key === "user") {
+        const user = JSON.parse(e.newValue || "{}");
+        this.userRole = user.role || "";
+        this.userEmail = user.email || "";
       }
     },
     async logout() {
       try {
         localStorage.removeItem("isLoggedIn");
         localStorage.removeItem("user");
-        
-        this.userRole = '';
-        this.userEmail = '';
+
+        this.userRole = "";
+        this.userEmail = "";
         this.menuVisible = false;
-        
-        await this.$router.push('/');
+
+        await this.$router.push("/");
         window.location.reload();
       } catch (error) {
-        console.error('Lỗi khi đăng xuất:', error);
+        console.error("Lỗi khi đăng xuất:", error);
       }
-    }
-  }
+    },
+  },
 };
 </script>
 
 <style scoped>
 .nav-link {
   padding: 0.5rem 1rem;
-  color: #4B5563;
+  color: #4b5563;
   font-weight: 500;
   border-radius: 0.375rem;
   transition: color 200ms;
 }
 
 .nav-link:hover {
-  color: #2563EB;
+  color: #2563eb;
 }
 
 .nav-link.router-link-active {
-  color: #2563EB;
-  background-color: #EFF6FF;
+  color: #2563eb;
+  background-color: #eff6ff;
 }
 
 .auth-button {
@@ -174,20 +178,20 @@ export default {
 }
 
 .auth-button.login {
-  background-color: #2563EB;
+  background-color: #2563eb;
   color: white;
 }
 
 .auth-button.login:hover {
-  background-color: #1D4ED8;
+  background-color: #1d4ed8;
 }
 
 .auth-button.logout {
-  background-color: #EF4444;
+  background-color: #ef4444;
   color: white;
 }
 
 .auth-button.logout:hover {
-  background-color: #DC2626;
+  background-color: #dc2626;
 }
 </style>
